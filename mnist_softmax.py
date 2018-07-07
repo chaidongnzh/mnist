@@ -62,6 +62,7 @@ def main(_):
   # Train
   for _ in range(1000):
     batch_xs, batch_ys = mnist.train.next_batch(100)
+    logging.info("train_step: %s", batch_xs)
     sess.run(train_step, feed_dict={x: batch_xs, y_: batch_ys})
 
   # Test trained model
